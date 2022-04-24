@@ -4,11 +4,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 
-    entry: path.join(__dirname, "index.tsx"),
-    output: { path: path.join(__dirname, "build"), filename: "[name].[contenthash].bundle.js" },
+    entry: path.join(__dirname, "src", "index.tsx"),
+    output: { path: path.join(__dirname, "build"), filename: "[name].bundle.js" },
     mode: process.env.NODE_ENV || "development",
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: [".tsx", ".ts", ".js", "jsx"],
     },
     module: {
         rules: [
@@ -27,7 +27,8 @@ module.exports = {
                 use: [
                     "style-loader", 
                     "css-loader",
-                    "sass-loader"
+                    "postcss-loader",
+                    "sass-loader",
                 ]
             },
             {
@@ -45,7 +46,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "index.html")
+            template: path.join(__dirname,"src", "index.html")
         })
     ]
 

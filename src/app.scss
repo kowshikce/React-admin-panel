@@ -1,10 +1,6 @@
-ol {
-    text-decoration: none;
-    font-family: monospace;
 
-    li {
-        font-size: 18px;
-        color: cornflowerblue;
-        
-    }
+.bg_container_main {
+    background: linear-gradient(to right bottom, rgba(12, 211, 125, 0.6), rabg(122, 122, 122, 0.5));
+    box-shadow: 20px 20px 5px rbga(122, 122, 122, 0.5);
+    border-radius: 5px;
 }
